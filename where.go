@@ -32,8 +32,18 @@ type Checkin struct {
 }
 
 type Venue struct {
-	Name     string
-	Location Location
+	Name       string
+	Location   Location
+	Categories []Category
+}
+
+type Category struct {
+	Icon Icon
+}
+
+type Icon struct {
+	Prefix string
+	Suffix string
 }
 
 type Location struct {
@@ -46,6 +56,13 @@ type Location struct {
 func (c *Checkin) TimeAgo() string {
 	time := time.Unix(c.CreatedAt, 0)
 	return humanize.Time(time)
+}
+
+func (c *Checkin) IconURL() string {
+	prefix := c.Venue.Categories[0].Icon.Prefix
+	suffix := c.Venue.Categories[0].Icon.Suffix
+
+	return fmt.Sprintf("%s88%s", prefix, suffix)
 }
 
 func main() {
