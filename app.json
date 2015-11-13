@@ -12,6 +12,11 @@
     "FOURSQUARE_ACCESS_TOKEN": {
       "description": "A valid Foursquare OAuth access token",
       "required": true
+    },
+    "MARTINI_ENV": {
+      "description": "Martini environment. Don't change this unless you know what you're doing.",
+      "required": true,
+      "value": "production"
     }
   }
 }
