@@ -1,0 +1,17 @@
+{
+  "name": "Where?",
+  "description": "A simple app to let people know where you are based on your Swarm checkins.",
+  "website": "http://where.joshmcmillan.com/",
+  "repository": "https://github.com/mcmillan/where",
+  "success_url": "/",
+  "env": {
+    "NAME": {
+      "description": "Your name!",
+      "required": true
+    },
+    "FOURSQUARE_ACCESS_TOKEN": {
+      "description": "A valid Foursquare OAuth access token",
+      "required": true
+    }
+  }
+}

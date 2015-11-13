@@ -72,7 +72,10 @@ func main() {
 	m.Use(render.Renderer())
 
 	m.Get("/", func(r render.Render) {
-		r.HTML(200, "index", getLastCheckin())
+		r.HTML(200, "index", map[string]interface{}{
+			"Name":    os.Getenv("NAME"),
+			"Checkin": getLastCheckin(),
+		})
 	})
 
 	m.Run()
